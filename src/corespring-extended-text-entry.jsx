@@ -63,24 +63,28 @@ export class CorespringExtendedTextEntry extends React.Component {
       }
     }
 
-    return (
-      <div className="RichEditor-root">
-        <div className="RichEditor-button-bar">
-          <InlineStyleControls
-            editorState={editorState}
-            onToggle={this.toggleInlineStyle}
-          />
+    let buttonBar = this.props.model.disabled ? null : <div className="RichEditor-button-bar">
+      <InlineStyleControls
+        editorState={editorState}
+        onToggle={this.toggleInlineStyle}
+      />
 
-          <BlockStyleControls
-            editorState={editorState}
-            onToggle={this.toggleBlockType}
-          />
-        </div>
+      <BlockStyleControls
+        editorState={editorState}
+        onToggle={this.toggleBlockType}
+      />
+    </div>;
+
+    let rootClassName = "RichEditor-root" + (this.props.model.disabled ? ' disabled' : '');
+    return (
+      <div className={rootClassName}>
+        {buttonBar}
         <div className={className} onClick={this.focus}>
           <Editor
             blockStyleFn={getBlockStyle}
             customStyleMap={styleMap}
             editorState={editorState}
+            readOnly={this.props.model.disabled}
             handleKeyCommand={this.handleKeyCommand}
             onChange={this.onChange}
             onTab={this.onTab}
@@ -92,8 +96,6 @@ export class CorespringExtendedTextEntry extends React.Component {
       </div>
     );
   }
-
-
 }
 
 // Custom overrides for "code" style.

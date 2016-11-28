@@ -5,6 +5,11 @@
   border: 1px solid #ddd;
   font-family: 'Georgia', serif;
   font-size: 14px;
+
+  &.disabled {
+    background-color: #f8f6f6;
+    border-color: #f8f6f6;
+  }
 }
 
 .RichEditor-editor {
@@ -12,6 +17,7 @@
   cursor: text;
   font-size: 16px;
   margin-top: 10px;
+
 }
 
 .RichEditor-editor .public-DraftEditorPlaceholder-root,
@@ -22,7 +28,6 @@
 .RichEditor-editor .public-DraftEditor-content {
   min-height: 50px;
   padding: 10px;
-
 }
 
 .RichEditor-hidePlaceholder .public-DraftEditorPlaceholder-root {
