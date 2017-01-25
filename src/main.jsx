@@ -6,7 +6,7 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import { green200, green500, amber300, amber500, amber600 } from 'material-ui/styles/colors';
 
 
-var style = require('!style!css!less!./index.less');
+require('./index.less');
 
 import CorespringExtendedTextEntry from './corespring-extended-text-entry.jsx'
 
