@@ -1,6 +1,6 @@
 {
   "name": "corespring-extended-text-entry",
-  "version": "1.0.0-prerelease",
+  "version": "1.1.0-prerelease",
   "main": "src/index.js",
   "description": "A pie extended text entry component",
   "keywords": [
